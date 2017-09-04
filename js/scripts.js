@@ -64,7 +64,7 @@ $(function() {
             }
         }
     }
-   // };
+    // };
     var board = {
         name: 'Kanban Board',
         addColumn: function(column) {
@@ -85,22 +85,24 @@ $(function() {
             placeholder: 'card-placeholder'
         }).disableSelection();
     }
+    
+    // TWORZENIE KOLUMN
+    var todoColumn = new Column('To do');
+    var doingColumn = new Column('Doing');
+    var doneColumn = new Column('Done');
+
+    // DODAWANIE KOLUMN DO TABLICY
+    board.addColumn(todoColumn);
+    board.addColumn(doingColumn);
+    board.addColumn(doneColumn);
+
+    // TWORZENIE NOWYCH EGZEMPLARZY KART
+    var card1 = new Card('New task');
+    var card2 = new Card('Create kanban boards');
+
+    // DODAWANIE KART DO KOLUMN
+    todoColumn.addCard(card1);
+    doingColumn.addCard(card2);
+     
 });
 
-// TWORZENIE KOLUMN
-var todoColumn = new Column('To do');
-var doingColumn = new Column('Doing');
-var doneColumn = new Column('Done');
-
-// DODAWANIE KOLUMN DO TABLICY
-board.addColumn(todoColumn);
-board.addColumn(doingColumn);
-board.addColumn(doneColumn);
-
-// TWORZENIE NOWYCH EGZEMPLARZY KART
-var card1 = new Card('New task');
-var card2 = new Card('Create kanban boards');
-
-// DODAWANIE KART DO KOLUMN
-todoColumn.addCard(card1);
-doingColumn.addCard(card2);
